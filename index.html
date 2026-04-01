@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie_explorer_app</title>
+  <meta charset="UTF-8" />
+  <title>Movie Explorer App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">🎬</div>
+    <span class="logo-text">CineVault</span>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Discover</div>
+    <div class="nav-item active" onclick="setNav(this)">Home</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">⭐</span> Top Rated</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">🆕</span> New Releases</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">🎭</span> TV Series</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Library</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">❤️</span> Watchlist</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">✅</span> Watched</div>
+    <div class="nav-item" onclick="setNav(this)"><span class="icon">🎯</span> Recommendations</div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Genres</div>
+    <div style="padding: 4px 2px;">
+      <span class="genre-chip active" onclick="toggleGenre(this)">Action</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Drama</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Comedy</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Horror</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Sci-Fi</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Thriller</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Romance</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">Anime</span>
+      <span class="genre-chip" onclick="toggleGenre(this)">K-Drama</span>
+    </div>
+  </div>
+</aside>
+
+<div class="main">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✦ 300+ titles available</div>
+      <h1>Find <span>Movies</span> You'll Love Without the Hassle</h1>
+      <p>Curated picks, trending hits, and hidden gems — all in one beautiful place.</p>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search through 300+ movies online..." oninput="handleSearch(this.value)" onkeypress="handleSearchKeypress(event)">
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-num">300+</span><span class="stat-label">Movies</span></div>
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">TV Series</span></div>
+        <div class="stat"><span class="stat-num">4K</span><span class="stat-label">Quality</span></div>
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Genres</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content-main">
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title">Trending Now</div>
+          <div class="section-link">See all →</div>
+        </div>
+        <div class="trending-scroll" id="trendingRow"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title" id="gridTitle">Popular</div>
+          <div class="section-link" id="gridSubtitle">Page <span id="pageNum">1</span> / 50 →</div>
+        </div>
+        <div class="movie-grid" id="movieGrid"></div>
+        <div class="pagination">
+          <div class="page-btn" onclick="changePage(-1)">←</div>
+          <span class="page-info" id="pageInfo">2 / 50</span>
+          <div class="page-btn" onclick="changePage(1)">→</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="detail-panel hidden" id="detailPanel">
+      <div class="detail-header">
+        <div class="detail-title" id="detailTitle">Squid Game 2</div>
+        <div class="detail-close" onclick="closeDetail()">✕</div>
+      </div>
+      <div class="detail-meta" id="detailMeta">
+        <span>2024</span> · <span>PG-13</span> · <span>2h 46m</span>
+        <div style="margin-left:auto"><div class="detail-rating" id="detailRating">⭐ 8.9/10</div></div>
+      </div>
+      <div class="detail-images" id="detailImages"></div>
+      <div class="detail-tags" id="detailTags"></div>
+      <div class="detail-action">
+        <button class="visit-btn" id="visitBtn">Visit Homepage →</button>
+      </div>
+      <div class="detail-table" id="detailTable"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
