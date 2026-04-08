@@ -33,16 +33,20 @@ const trendingIds = [
 'tt0816692',  // Interstellar
 'tt1345836',  // The Dark Knight Rises
 'tt0087843',  // Back to the Future
+'tt0110912',  // Pulp Fiction
+'tt0120737',  // The Lord of the Rings: The Fellowship of the Ring
+'tt0109830',  // Forrest Gump
+'tt0120815',  // Saving Private Ryan
 ];
 
 function showGridLoader() {
-document.getElementById('movieGrid').innerHTML = Array(8).fill(0).map((_, i) => `
-    <div class="movie-card" style="animation-delay:${i*0.05}s;pointer-events:none">
-    <div style="width:100%;aspect-ratio:2/3;background:var(--bg4);border-radius:8px 8px 0 0;animation:pulse 1.4s ease-in-out infinite alternate"></div>
-    <div class="movie-card-body">
+  document.getElementById('movieGrid').innerHTML = Array.from({ length: 30 }, (_, i) => `
+    <div class="movie-card" style="animation-delay:${i * 0.05}s;pointer-events:none">
+      <div style="width:100%;aspect-ratio:2/3;background:var(--bg4);border-radius:8px 8px 0 0;animation:pulse 1.4s ease-in-out infinite alternate"></div>
+      <div class="movie-card-body">
         <div style="height:13px;background:var(--bg4);border-radius:4px;margin-bottom:6px;animation:pulse 1.4s ease-in-out infinite alternate"></div>
         <div style="height:11px;width:60%;background:var(--bg4);border-radius:4px;animation:pulse 1.4s ease-in-out infinite alternate"></div>
-    </div>
+      </div>
     </div>`).join('');
 }
 
@@ -102,15 +106,27 @@ document.getElementById('trendingRow').innerHTML = valid
 async function loadMovies(query, page = 1) {
 showGridLoader();
 currentSearch = query;
-const randomPage = page === 1 ? Math.floor(Math.random() * 4) + 1 : page;
-currentPage = randomPage;
-const data = await fetchSearch(query, randomPage);
+const requestedPage = page === 1 ? 1 : page;
+currentPage = requestedPage;
+const data = await fetchSearch(query, requestedPage);
 if (data.Response === 'True') {
-    allMovies = data.Search;
+    let movies = data.Search;
+    if (requestedPage === 1) {
+        const secondPage = await fetchSearch(query, 2);
+        if (secondPage.Response === 'True') {
+            movies = movies.concat(secondPage.Search);
+            const thirdPage = await fetchSearch(query, 3);
+            if (thirdPage.Response === 'True') {
+                movies = movies.concat(thirdPage.Search);
+            }
+        }
+        movies = movies.slice(0, 24);
+    }
+    allMovies = movies;
     filteredMovies = [...allMovies];
     totalPages = Math.ceil(parseInt(data.totalResults) / 10);
-    document.getElementById('pageInfo').textContent = `${randomPage} / ${Math.min(totalPages, 100)}`;
-    document.getElementById('pageNum').textContent = randomPage;
+    document.getElementById('pageInfo').textContent = `${requestedPage} / ${Math.min(totalPages, 100)}`;
+    document.getElementById('pageNum').textContent = requestedPage;
     renderGrid();
 } else if (data.Error && data.Error.includes('API key')) {
     document.getElementById('movieGrid').innerHTML = `
@@ -137,7 +153,7 @@ if (data.Response === 'True') {
 }
 
 function renderGrid() {
-// Shuffle movies for variety
+
 const shuffled = [...filteredMovies].sort(() => Math.random() - 0.5);
 document.getElementById('movieGrid').innerHTML = shuffled.map((m, i) => `
     <div class="movie-card" style="animation-delay:${i * 0.04}s" onclick="openDetailById('${m.imdbID}')">

@@ -5,7 +5,6 @@
 --bg2: #0f0f1a;
 --bg3: #151524;
 --bg4: #1c1c2e;
---surface: #1a1a2e;
 --border: rgba(255,255,255,0.07);
 --border2: rgba(255,255,255,0.12);
 --accent: #c084fc;
@@ -52,6 +51,7 @@ align-items: center;
 gap: 10px;
 margin-bottom: 36px;
 padding: 0 8px;
+cursor: pointer;
 }
 
 .logo-icon {
@@ -147,45 +147,13 @@ background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 6
 pointer-events: none;
 }
 
-.hero-content { position: relative; z-index: 1; max-width: 560px; }
-
-.hero-badge {
-display: inline-flex;
+.hero-content {
+position: relative;
+z-index: 1;
+max-width: 1300px;
+display: flex;
 align-items: center;
-gap: 6px;
-background: rgba(192,132,252,0.12);
-border: 1px solid rgba(192,132,252,0.25);
-border-radius: 20px;
-padding: 5px 12px;
-font-size: 11px;
-font-weight: 600;
-color: var(--accent);
-letter-spacing: 0.05em;
-margin-bottom: 20px;
-text-transform: uppercase;
-}
-
-.hero h1 {
-font-family: var(--font-head);
-font-size: 40px;
-font-weight: 800;
-line-height: 1.1;
-margin-bottom: 14px;
-letter-spacing: -0.02em;
-}
-
-.hero h1 span {
-background: linear-gradient(135deg, var(--accent), var(--accent2));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-.hero p {
-color: var(--text2);
-font-size: 15px;
-line-height: 1.6;
-margin-bottom: 28px;
+gap: 60px;
 }
 
 .search-bar {
@@ -196,7 +164,8 @@ background: var(--bg3);
 border: 1px solid var(--border2);
 border-radius: 12px;
 padding: 12px 18px;
-max-width: 520px;
+flex: 1;
+min-width: 0;
 transition: border-color 0.2s;
 }
 
@@ -230,14 +199,22 @@ transition: opacity 0.2s, transform 0.15s;
 }
 .search-btn:hover { opacity: 0.9; transform: scale(0.98); }
 
-.stats-row {
-display: flex;
-gap: 32px;
-margin-top: 32px;
+.profile-btn {
+background: transparent;
+color: var(--text);
+border: 1px solid var(--border2);
+border-radius: 8px;
+padding: 8px 16px;
+font-size: 13px;
+font-weight: 600;
+font-family: var(--font-body);
+cursor: pointer;
+transition: background 0.2s, transform 0.15s;
 }
-.stat { display: flex; flex-direction: column; }
-.stat-num { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--text); }
-.stat-label { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.profile-btn:hover {
+background: rgba(255,255,255,0.06);
+transform: translateY(-1px);
+}
 
 .content { flex: 1; display: flex; min-height: 0; }
 .content-main { flex: 1; padding: 32px 32px; min-width: 0; overflow-y: auto; }
