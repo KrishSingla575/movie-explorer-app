@@ -17,9 +17,7 @@ https://www.omdbapi.com/
 
 * 🔍 Search movies by name
 * 🎯 Filter movies by year and type
-* 🔃 Sort movies by release year
 * ❤️ Add movies to favorites (using local storage)
-* 🌙 Dark mode toggle (optional)
 * ⏳ Loading indicator during API calls
 
 ---
@@ -38,28 +36,11 @@ https://www.omdbapi.com/
 ```
 movie-explorer-app/
 │── index.html
+|-- Profile.html
 │── style.css
 │── script.js
 │── README.md
 ```
-
----
-
-## ⚙️ How to Run the Project
-
-1. Clone the repository
-2. Open the project folder
-3. Open `index.html` in your browser
-4. Enter a movie name and explore
-
----
-
-## 🚀 Future Enhancements
-
-* Pagination
-* Debouncing search
-* Infinite scroll
-* Progressive Web App (PWA) support
 
 ---
 
