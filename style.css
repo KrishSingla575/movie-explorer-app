@@ -203,17 +203,17 @@ transition: opacity 0.2s, transform 0.15s;
 background: transparent;
 color: var(--text);
 border: 1px solid var(--border2);
-border-radius: 8px;
+border-radius: 80px;
 padding: 8px 16px;
 font-size: 13px;
-font-weight: 600;
+font-weight: 300;
 font-family: var(--font-body);
 cursor: pointer;
 transition: background 0.2s, transform 0.15s;
 }
-.profile-btn:hover {
-background: rgba(255,255,255,0.06);
-transform: translateY(-1px);
+
+.profile-imge {
+    width: 12px;
 }
 
 .content { flex: 1; display: flex; min-height: 0; }
