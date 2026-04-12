@@ -258,6 +258,14 @@ function closeDetail() {
 document.getElementById('detailPanel').classList.add('hidden');
 }
 
+function openDetailByTitle(title) {
+    fetchSearch(title, 1).then(data => {
+        if (data.Response === 'True' && data.Search.length > 0) {
+            openDetailById(data.Search[0].imdbID);
+        }
+    });
+}
+
 function handleSearch(val) {
 clearTimeout(searchTimeout);
 const q = val.trim();

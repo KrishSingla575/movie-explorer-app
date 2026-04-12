@@ -201,19 +201,17 @@ transition: opacity 0.2s, transform 0.15s;
 
 .profile-btn {
 background: transparent;
-color: var(--text);
 border: 1px solid var(--border2);
-border-radius: 80px;
-padding: 8px 16px;
-font-size: 13px;
-font-weight: 300;
-font-family: var(--font-body);
+border-radius: 90px;
+padding: 8px 8px;
 cursor: pointer;
-transition: background 0.2s, transform 0.15s;
 }
 
-.profile-imge {
-    width: 12px;
+.profile-image {
+    width: 70px;
+    height: 70px;
+    border-radius:75px;
+    border:2px solid var(--accent);
 }
 
 .content { flex: 1; display: flex; min-height: 0; }
@@ -334,6 +332,11 @@ overflow-y: auto;
 display: flex;
 flex-direction: column;
 transition: transform 0.3s;
+position: fixed;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: 10;
 }
 
 .detail-panel.hidden { display: none; }
