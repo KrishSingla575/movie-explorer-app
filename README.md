@@ -2,7 +2,13 @@
 
 ## 📌 Overview
 
-The Movie Explorer App is a web application that allows users to search and explore movies using real-time data from the OMDb API. Users can view movie details such as title, release year, and posters, and interact with the data through search, filtering, and sorting features.
+CineVault is a Movie Explorer Web Application that allows users to search and explore movies using real‑time data from the OMDb API. Users can browse trending films, search movies instantly, and view detailed information such as title, release year, rating, genres, and posters.
+
+The project contains two main pages:
+
+* index.html → Main movie browsing interface with search, trending movies, filters, and detail panel.
+
+* Profile.html → User profile dashboard showing account information, stats, and personal watchlist.
 
 ---
 
@@ -13,11 +19,12 @@ https://www.omdbapi.com/
 
 ---
 
-## 🎯 Features
+## ✨ Features
 
-* 🔍 Search movies by name
-* 🎯 Filter movies by year and type
-* ❤️ Add movies to favorites (using local storage)
+* 🔍 Movie Search
+* 🎥 Movie Detail View
+* 🎯 Filter movies by type
+* 📱 Responsive UI
 * ⏳ Loading indicator during API calls
 
 ---
