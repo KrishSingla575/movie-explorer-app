@@ -1,5 +1,12 @@
-const API_KEY = 'e9994db';
+const API_KEY = '6b7a0e42';
 const BASE = 'https://www.omdbapi.com/';
+
+let currentPage = 1;
+let currentSearch = 'action';
+let totalPages = 1;
+let allMovies = [];
+let filteredMovies = [];
+let searchTimeout = null;
 
 function makePlaceholder(title) {
 const initials = (title||'?').split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase()||'?';
@@ -9,34 +16,14 @@ return `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' h
 }
 
 function proxyImg(url, title) {
-if (!url || url === 'N/A') return makePlaceholder(title||'');
-return url;
+  return (!url || url === 'N/A') ? makePlaceholder(title) : url;
 }
 
-let currentPage = 1;
-let currentSearch = 'action';
-let totalPages = 1;
-let allMovies = [];
-let filteredMovies = [];
-let searchTimeout = null;
-
 const trendingIds = [
-'tt15398776', // Oppenheimer
-'tt1630029',  // Avatar 2
-'tt10366460', // John Wick 4
-'tt6791350',  // Guardians 3
-'tt9603212',  // Migration
-'tt11304740', // Dune Part Two
-'tt0111161',  // Shawshank Redemption
-'tt0068646',  // The Godfather
-'tt5681572',  // Barbie
-'tt0816692',  // Interstellar
-'tt1345836',  // The Dark Knight Rises
-'tt0087843',  // Back to the Future
-'tt0110912',  // Pulp Fiction
-'tt0120737',  // The Lord of the Rings: The Fellowship of the Ring
-'tt0109830',  // Forrest Gump
-'tt0120815',  // Saving Private Ryan
+  'tt15398776', 'tt1630029', 'tt10366460', 'tt6791350',
+  'tt9603212', 'tt11304740', 'tt0111161', 'tt0068646',
+  'tt5681572', 'tt0816692', 'tt1345836', 'tt0087843',
+  'tt0110912', 'tt0120737', 'tt0109830', 'tt0120815'
 ];
 
 function showGridLoader() {
