@@ -22,19 +22,18 @@
         <div class="nav-section">
             <div class="nav-label">Library</div>
             <div class="nav-item active">Profile</div>
-            <div class="nav-item">Watchlist</div>
-            <div class="nav-item">Settings</div>
         </div>
     </aside>
 
-    <main class="main">
+    <div class="main">
         <header>
             <div class="hero">
                 <h1 style="font-family:var(--font-head);font-size:28px;">Account</h1>
             </div>
         </header>
 
-        <section class="content-main">
+        <div class="content">
+            <div class="content-main">
             <div class="profile-card">
                 <img src="https://i.pinimg.com/736x/59/63/4c/59634c2305dfebcefcce18d4734f8108.jpg" class="profile-avatar-lg" alt="Profile avatar">
                 <div class="profile-info">
@@ -62,158 +61,177 @@
                 </div>
             </div>
 
-            <section class="watchlist-section section">
+            <div class="watchlist-section section">
                 <div class="section-header">
                     <div class="section-title">Your Watchlist</div>
                 </div>
                 <div class="movie-grid">
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Interstellar')">
                         <img src="https://i.pinimg.com/736x/0b/34/ce/0b34ce2145b475247577a5d438a199b0.jpg" alt="Interstellar poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Interstellar</div>
                         </div>
                     </div>
-                    <div class="movie-card">
-                        <img src="https://i.pinimg.com/736x/b9/4c/05/b94c05a007be8988685c363be52e0b5a.jpg" alt="Dhurandhar 2 poster">
+                    <div class="movie-card" onclick="openDetailByTitle('Kabir Singh')">
+                        <img src="https://i.pinimg.com/736x/b7/31/ff/b731fff02e0ed8af49ef27257ffe1449.jpg" alt="Kabir Singh poster">
                         <div class="movie-card-body">
-                            <div class="movie-card-title">Dhurandhar 2</div>
+                            <div class="movie-card-title">Kabir Singh</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Inception')">
                         <img src="https://i.pinimg.com/1200x/5c/e3/5a/5ce35a87a0a4e2682eb622fceaef503e.jpg" alt="Inception poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Inception</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Tere Ishk Mein')">
                         <img src="https://i.pinimg.com/1200x/eb/2b/69/eb2b693879593fcd18d8fc2bf2c7492b.jpg" alt="Tere Ishk Mein">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Tere Ishk Mein</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Raja Saab')">
                         <img src="https://i.pinimg.com/736x/29/92/cc/2992ccd18b454733a568672fbc2ca2fc.jpg" alt="Raja Saab poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Raja Saab</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Goodfellas')">
                         <img src="https://i.pinimg.com/1200x/40/7f/ba/407fbabc044a23cfbf19f3d32206d013.jpg" alt="Goodfellas poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Goodfellas</div>
                         </div>
                     </div>
-                    <div class="movie-card">
-                        <img src="https://i.pinimg.com/1200x/27/2f/9f/272f9ffa181afb99c08230c4e047587b.jpg" alt="Thamma poster">
+                    <div class="movie-card" onclick="openDetailByTitle('bhool bhulaiyaa 3')">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMGFhMDQ4MzMtMTUxOC00NDE0LTkzZWMtMzhhMGNiMDlhNDNmXkEyXkFqcGc@._V1_.jpg" alt="bhool bhulaiyaa 3 poster">
                         <div class="movie-card-body">
-                            <div class="movie-card-title">Thamma</div>
+                            <div class="movie-card-title">bhool bhulaiyaa 3</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('The Shawshank Redemption')">
                         <img src="https://m.media-amazon.com/images/I/51WYsbIa7TS.jpg" alt="The Shawshank Redemption poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">The Shawshank Redemption</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('The Godfather')">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAY2xsJVIZxm3K0gNtOMr9CSCvLdr5kdo3V3pv2HMuUkTBhFzRe5-b8NDRmO1mt5S5Xp_YyQ&s=10" alt="The Godfather poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">The Godfather</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Stree 2')">
                         <img src="https://i.pinimg.com/1200x/52/4a/0b/524a0b94987b696e5b9a70e514e02e89.jpg" alt="Stree 2 poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Stree 2</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Dhoom 3')">
                         <img src="https://i.pinimg.com/1200x/32/97/3e/32973eb3c65e15e45df47042f5fc55f4.jpg" alt="Dhoom 3 poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Dhoom 3</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Star Wars')">
                         <img src="https://i.pinimg.com/1200x/c7/15/3b/c7153bc94996b903c86032409fa4c71e.jpg" alt="Star Wars poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Star Wars</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Border 2')">
                         <img src="https://i.pinimg.com/1200x/ad/3e/81/ad3e8113272cf255d3ab0342293c3118.jpg" alt="Border 2 poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Border 2</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Titanic')">
                         <img src="https://i.pinimg.com/1200x/65/58/7e/65587eb22024f625d7442d90d34f2520.jpg" alt="Titanic poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Titanic</div>
                         </div>
                     </div>
-                     <div class="movie-card">
+                     <div class="movie-card" onclick="openDetailByTitle('Maargan')">
                         <img src="https://m.media-amazon.com/images/M/MV5BMDExODdkNTAtNmYwYi00MDM4LWJjNGItNGM0YjA4NzYwODQxXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" alt="Maargan poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Maargan</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('The Silence of the Lambs')">
                         <img src="https://i.pinimg.com/1200x/29/ae/4a/29ae4a9e7f875628d067e029938e6251.jpg" alt="The Silence of the Lambs poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">The Silence of the Lambs</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('The Bhootnii')">
                         <img src="https://i.pinimg.com/1200x/21/46/22/2146223c56204e208756b4568d2d5b53.jpg" alt="The Bhootnii poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">The Bhootnii</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Avengers')">
                         <img src="https://c8.alamy.com/comp/P4APGY/original-film-title-the-avengers-english-title-the-avengers-film-director-joss-whedon-year-2012-credit-marvel-enterprises-album-P4APGY.jpg" alt="Avengers poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Avengers</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Fight Club')">
                         <img src="https://i.pinimg.com/736x/64/7f/5d/647f5dfab602a0b8f19011866d94d48f.jpg" alt="Fight Club poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Fight Club</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Amaran')">
                         <img src="https://i.pinimg.com/736x/95/e4/7f/95e47f05e96eb241fce640630b936f15.jpg" alt="Amaran poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Amaran</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('Saiyaara')">
                         <img src="https://m.media-amazon.com/images/M/MV5BMTk2ZmFhYjctYWZiYy00N2IxLWEzMWItZGRiMDY4ZDQwZWFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Saiyaara poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">Saiyaara</div>
                         </div>
                     </div>
-                    <div class="movie-card">
-                        <img src="https://i.pinimg.com/1200x/84/47/e4/8447e4a8aa7f83c0fb89a471b1a8e793.jpg" alt="IB71 poster">
+                    <div class="movie-card" onclick="openDetailByTitle('1920')">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZGNmNWQ2YTgtYjZlNy00NWRjLWJiNzQtOWI0YjBkZjY5OTc2XkEyXkFqcGc@._V1_.jpg" alt="1920 poster">
                         <div class="movie-card-body">
-                            <div class="movie-card-title">IB71</div>
+                            <div class="movie-card-title">1920</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('War 2')">
                         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/War_2_official_poster.jpg/250px-War_2_official_poster.jpg" alt="War 2 poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">War 2</div>
                         </div>
                     </div>
-                    <div class="movie-card">
+                    <div class="movie-card" onclick="openDetailByTitle('The Lord of the Rings')">
                         <img src="https://i.pinimg.com/736x/70/95/2c/70952c9ad5ee98a19483f00f9970030b.jpg" alt="The Lord of the Rings poster">
                         <div class="movie-card-body">
                             <div class="movie-card-title">The Lord of the Rings</div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
-    </main>
+            </div>
+
+            <div class="detail-panel hidden" id="detailPanel">
+                <div class="detail-header">
+                    <div class="detail-title" id="detailTitle">Movie Title</div>
+                    <div class="detail-close" onclick="closeDetail()">✕</div>
+                </div>
+                <div class="detail-meta" id="detailMeta">
+                    <span>Year</span> · <span>Rating</span> · <span>Runtime</span>
+                    <div style="margin-left:auto"><div class="detail-rating" id="detailRating">⭐ Rating</div></div>
+                </div>
+                <div class="detail-images" id="detailImages"></div>
+                <div class="detail-tags" id="detailTags"></div>
+                <div class="detail-action">
+                    <button class="visit-btn" id="visitBtn">Visit Homepage →</button>
+                </div>
+                <div class="detail-table" id="detailTable"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
